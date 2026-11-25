@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying article and the software itself."
+title: "eagmodel: the Evidence-Aggregation-Growth model of competence"
+version: 0.1.0
+date-released: 2026-11-25
+license: MIT
+authors:
+  - name: "The eag-model authors"
+repository-code: "https://github.com/lethanhhuydn/eag-model"
+keywords:
+  - competence assessment
+  - STEM education
+  - research design
+  - item response theory
+  - simulation

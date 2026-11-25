@@ -1,0 +1,74 @@
+{
+  "n_students": 200,
+  "components": [
+    "Problem framing",
+    "System modelling",
+    "Measurement design",
+    "Inference design",
+    "Iterative refinement"
+  ],
+  "n_indicators": 4,
+  "max_score": 3,
+  "times": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "n_raters": 2,
+  "weights": [
+    0.15,
+    0.2,
+    0.2,
+    0.25,
+    0.2
+  ],
+  "rho": -2.0,
+  "alpha": [
+    -0.3,
+    -0.6,
+    -0.8,
+    -1.0,
+    -0.7
+  ],
+  "sd_a": 1.0,
+  "gamma": [
+    0.35,
+    0.3,
+    0.3,
+    0.25,
+    0.3
+  ],
+  "beta": [
+    0.1,
+    0.15,
+    0.2,
+    0.15,
+    0.2
+  ],
+  "sd_b": 0.25,
+  "corr_a": 0.5,
+  "corr_b": 0.3,
+  "corr_ab": -0.2,
+  "delta": [
+    -0.6,
+    -0.2,
+    0.2,
+    0.6
+  ],
+  "tau": [
+    -1.2,
+    0.0,
+    1.2
+  ],
+  "h_intercept": 20.0,
+  "h_slope": 75.0,
+  "h_sd": 8.0,
+  "rater_severity": [
+    -3.0,
+    3.0
+  ],
+  "group_fraction": 0.5,
+  "holistic_occasions": null,
+  "link": "identity"
+}

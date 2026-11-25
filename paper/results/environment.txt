@@ -1,0 +1,10 @@
+Environment used for the simulation study of the article
+Python 3.13.18 on Linux x86_64
+numpy 2.5.3
+scipy 1.18.1
+pandas 3.0.5
+matplotlib 3.11.2
+
+Command:
+python paper/run_montecarlo.py --reps 200 --sens-reps 100 --workers 2 --out paper/results/montecarlo.csv
+Base seed 20261125 (seed of a replication = base seed + 10000 x condition index + replication index).

@@ -1,0 +1,204 @@
+{
+  "n_students": 200,
+  "components": [
+    "Problem framing",
+    "System modelling",
+    "Measurement design",
+    "Inference design",
+    "Iterative refinement"
+  ],
+  "kappa": 0.24796048946354313,
+  "kappa_ci": [
+    0.1915609091816902,
+    0.3209652981793046
+  ],
+  "rho": -2.032900572843187,
+  "rho_ci": [
+    -3.220271736398619,
+    -1.1156016107428486
+  ],
+  "weights": {
+    "Problem framing": 0.1575914694761386,
+    "System modelling": 0.2514989291082331,
+    "Measurement design": 0.16067017698202266,
+    "Inference design": 0.2638514856847613,
+    "Iterative refinement": 0.1663879387488442
+  },
+  "weights_se": {
+    "Problem framing": 0.03504945553168612,
+    "System modelling": 0.041201273481311494,
+    "Measurement design": 0.035834808270960784,
+    "Inference design": 0.03177849338454794,
+    "Iterative refinement": 0.029532237728783266
+  },
+  "link": {
+    "intercept": 20.362462951949176,
+    "slope": 74.50328180539624,
+    "residual_sd": 8.446898763579837
+  },
+  "rater_severity": {
+    "Rater 1": -3.1809032739996566,
+    "Rater 2": 3.1809032739996566
+  },
+  "lr_test_sum_score": {
+    "statistic": 95.67451194659589,
+    "df": 1,
+    "p": 1.354126565862326e-22
+  },
+  "headline": "All checks passed: the data support the model. Compensation index kappa = 0.25 (95% CI 0.19 to 0.32); the structure is partly non-compensatory: weak components hold competence back.",
+  "verdicts": {
+    "pass": 15,
+    "caution": 0,
+    "fail": 0,
+    "info": 6
+  },
+  "checks": [
+    {
+      "layer": "Data",
+      "check": "Number of students",
+      "result": "200",
+      "criterion": "at least 100 for stable estimates of the compensation index",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Data",
+      "check": "Rated student-occasions",
+      "result": "800 with 2 rater(s)",
+      "criterion": "at least 200 holistic design reviews",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Data",
+      "check": "Missing rubric scores",
+      "result": "0.0%",
+      "criterion": "below 20%",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Indicator fit (infit and outfit mean squares)",
+      "result": "20 of 20 indicators within range; largest deviation PF3 (infit 0.79, outfit 0.78)",
+      "criterion": "mean squares between 0.5 and 1.5",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Use of rubric levels",
+      "result": "0 indicator(s) with a level used fewer than 10 times",
+      "criterion": "every level of every indicator used at least 10 times",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Ordering of rubric thresholds",
+      "result": "ordered in all components",
+      "criterion": "thresholds increase with the rubric level",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Reliability of component proficiencies",
+      "result": "Problem framing 0.86; System modelling 0.86; Measurement design 0.87; Inference design 0.86; Iterative refinement 0.87",
+      "criterion": "EAP reliability of at least 0.70 in every component (below 0.50 fails)",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Distinctness of components",
+      "result": "largest correlation between initial proficiencies 0.55",
+      "criterion": "below 0.90, otherwise two components cannot be told apart",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Agreement between raters",
+      "result": "mean correlation between raters 0.77",
+      "criterion": "at least 0.60",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Evidence",
+      "check": "Rater severity",
+      "result": "range of severity 6.4 rating points (residual SD 8.4)",
+      "criterion": "reported and adjusted for by the model",
+      "verdict": "info"
+    },
+    {
+      "layer": "Computation",
+      "check": "Importance sampling",
+      "result": "smallest effective sample size 152 of 300 proposals",
+      "criterion": "at least 30 for every student",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Computation",
+      "check": "Convergence of all stages",
+      "result": "converged",
+      "criterion": "all optimisers report convergence",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "Precision of the compensation index",
+      "result": "kappa = 0.25 (95% CI 0.19 to 0.32); rho = -2.03",
+      "criterion": "upper limit less than four times the lower limit",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "Test of sum-score aggregation (kappa = 1)",
+      "result": "likelihood ratio 95.7, df 1, p = 1.35e-22; structure partly non-compensatory: weak components hold competence back",
+      "criterion": "p < 0.05 rejects the sum-score assumption",
+      "verdict": "info"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "Test of equal component weights",
+      "result": "likelihood ratio 6.8, df 4, p = 0.145",
+      "criterion": "p < 0.05 indicates unequal weights",
+      "verdict": "info"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "Functional form (residuals versus profile unevenness)",
+      "result": "fitted model r = 0.00 (95% CI -0.14 to 0.14); sum-score model r = -0.21",
+      "criterion": "confidence interval of the fitted model includes zero",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "Linearity of the rating link",
+      "result": "Wald test of curvature 0.4, df 2, p = 0.817",
+      "criterion": "p of at least 0.01; curvature biases the compensation index",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "Posterior predictive check (unevenness signature)",
+      "result": "fitted model p = 0.56; sum-score model p = 0.00",
+      "criterion": "predictive p-value of the fitted model between 0.05 and 0.95",
+      "verdict": "pass"
+    },
+    {
+      "layer": "Aggregation",
+      "check": "5-fold cross-validation against the sum-score model",
+      "result": "difference in out-of-sample log predictive density 49.4 (SE 12.8); fitted model predicts better",
+      "criterion": "difference larger than two standard errors",
+      "verdict": "info"
+    },
+    {
+      "layer": "Growth",
+      "check": "Growth across design cycles",
+      "result": "5 of 5 components show reliable growth; mean growth 0.31 logits per cycle",
+      "criterion": "reported",
+      "verdict": "info"
+    },
+    {
+      "layer": "Growth",
+      "check": "Difference in growth between groups (intervention minus comparison)",
+      "result": "3 of 5 components differ reliably; mean difference 0.18 logits per cycle",
+      "criterion": "reported",
+      "verdict": "info"
+    }
+  ]
+}

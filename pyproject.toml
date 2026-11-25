@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eagmodel"
+version = "0.1.0"
+description = "Evidence-Aggregation-Growth (EAG) model of competence: simulate data, check the model against your own data, and plan sample sizes"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["competence assessment", "STEM education", "item response theory", "CES aggregation", "simulation"]
+dependencies = ["numpy>=1.23", "scipy>=1.9", "pandas>=1.5", "matplotlib>=3.6"]
+
+[project.optional-dependencies]
+app = ["streamlit>=1.30", "openpyxl>=3.0"]
+test = ["pytest>=7"]
+
+[project.scripts]
+eag = "eagmodel.cli:main"
+
+[tool.setuptools]
+packages = ["eagmodel"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
