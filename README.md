@@ -111,6 +111,7 @@ Details are in `docs/model.md`. The stages run in sequence so that the meaning o
 ```bash
 python paper/run_montecarlo.py --reps 200 --sens-reps 100 --workers 2 --out paper/results/montecarlo.csv
 python paper/summarise.py          # tables in paper/results
+python paper/extra_checks.py       # further checks reported in the article (paper/results/extra_checks.json)
 python paper/make_figures.py       # figures in paper/figures
 ```
 
@@ -122,7 +123,7 @@ Seeds are fixed, so the numbers in the article are reproduced exactly on the sam
 
 ## Limitations
 
-The model assumes that rubric indicators follow a rating scale model within each component, that proficiency grows linearly on the logit scale, that latent variables are normally distributed and that holistic ratings are linear in competence with normal errors. The checks in the report probe several of these assumptions, and passing them does not prove the model. The estimator is sequential and approximate: in the simulation study it overestimated `kappa` by 3% to 9% for intermediate structures, its confidence intervals were too narrow when the structure is nearly conjunctive, and in about 1% of cohorts of 100 students its importance sampling broke down (the report flags this under "Importance sampling"; do not use the results in that case). The results in the article come from simulated data; empirical validation is the purpose of the protocol.
+The model assumes that rubric indicators follow a rating scale model within each component, that proficiency grows linearly on the logit scale, that latent variables are normally distributed and that holistic ratings are linear in competence with normal errors. The checks in the report probe several of these assumptions, and passing them does not prove the model. The estimator is sequential and approximate: in the simulation study it overestimated `kappa` by 3% to 9% for intermediate structures, its 95% confidence intervals covered the true value less often than 95% at the two ends of the range (prefer the likelihood-ratio test for decisions about the sum score), and in about 1% of cohorts of 100 students its importance sampling broke down (the report flags this under "Importance sampling"; do not use the results in that case). The results in the article come from simulated data; empirical validation is the purpose of the protocol.
 
 ## Tests
 

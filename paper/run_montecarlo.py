@@ -106,7 +106,8 @@ def one_replication(task):
     lev_true = leverage(truth["pi"][:, -1, :], w_true, cfg.rho).argmax(axis=1)
     row["target_eag"] = float(np.mean(s_free["target"] == lev_true))
     row["target_eaglin"] = float(np.mean(s_lin["target"] == lev_true))
-    sub = data.X[:, -1].sum(axis=2)                                   # lowest rubric subscore heuristic
+    # lowest rubric subscore heuristic; ties go to the component listed first (see paper/extra_checks.py for their effect)
+    sub = data.X[:, -1].sum(axis=2)
     row["target_lowest"] = float(np.mean(sub.argmin(axis=1) == lev_true))
     # ---- absolute readiness decisions and overstatement of uneven profiles
     ready = c_true >= READY

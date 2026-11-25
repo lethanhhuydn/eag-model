@@ -9,10 +9,13 @@ Framework) is strongly recommended.
 | | Hypothesis | Evidence | The hypothesis is not supported if |
 |---|---|---|---|
 | H1 | Evidence function: indicators measure five distinguishable components | rubric fit, reliability, component correlations | more than 20% of indicators misfit after one revision, any reliability is below 0.50, or two components correlate above 0.90 |
-| H2 | Aggregation function: competence is not fully compensatory (kappa < 1) | likelihood-ratio test, cross-validation, posterior predictive check | the 95% interval of kappa includes 1 and cross-validation shows no predictive gain |
+| H2 | Aggregation function: competence is not fully compensatory (kappa < 1) | likelihood-ratio test of kappa = 1 (primary), profile-likelihood interval, cross-validation, posterior predictive check | the likelihood-ratio test does not reject kappa = 1 at the 5% level, or the estimate of kappa exceeds 1 |
 | H3 | External validity: model-based competence predicts independent fair judgements better than rubric sum scores | scores from external judges who are blind to classroom data | the correlation with external scores is not higher than that of sum scores |
 | H4 | Growth function: teaching the highest-leverage component accelerates growth | randomised comparison of leverage-informed and generic feedback | the difference in growth of competence is not positive at the 5% level |
-| H5 | Fairness: parameters are invariant across gender and school location | subgroup fits | indicator difficulties differ by more than 0.5 logits or kappa differs reliably |
+| H5 | Fairness: parameters are invariant across gender and school location | subgroup fits, each subgroup with at least 100 students | indicator difficulties differ by more than 0.5 logits or kappa differs reliably |
+
+For H2 the likelihood-ratio test is the primary analysis because, in the simulation study, it kept its 5% level when the
+sum score was true, whereas the 95% confidence interval of kappa covered the true value in only 89.5% to 92% of cohorts.
 
 ## 2. Design
 
@@ -22,13 +25,26 @@ Framework) is strongly recommended.
 
 * *Option A, individual randomisation within classes.* After every design review each student receives feedback that is
   either leverage-informed (the component named in `teach_next`, with a matched mini-lesson) or generic (whole-class
-  feedback on all components). For a standardised difference of 0.30 on final competence, power 0.80, two-sided alpha 0.05
-  and a baseline covariate explaining half of the variance: n per arm = 2 (1.96 + 0.84)^2 (1 - 0.5) / 0.30^2 = 88, that is
-  about 210 students after 15% attrition.
-* *Option B, cluster randomisation of classes.* Classes per arm = 2 (1.96 + 0.84)^2 [ICC (1 - R2c) + (1 - ICC)(1 - R2s) / m] / d^2.
-  With 35 students per class, ICC = 0.20, R2c = R2s = 0.5 and d = 0.30 this gives 20 classes per arm.
+  feedback on all components).
+* *Option B, cluster randomisation of classes.*
 
 Option A is cheaper and is recommended for a first study; Option B avoids contamination between students.
+
+**Sample size for H4.** Set the size of phase 2 by simulation (`eag power`, or `power_analysis` in Python with your own
+effect sizes), because the outcome is a model-based estimate that contains measurement error. A conventional calculation
+gives a lower bound only. For a standardised difference of 0.30 on final competence, power 0.80, two-sided alpha 0.05 and a
+baseline covariate explaining half of the variance: n per arm = 2 (1.96 + 0.84)^2 (1 - 0.5) / 0.30^2 = 88, that is about
+210 students after 15% attrition. For option B: classes per arm = 2 (1.96 + 0.84)^2 [ICC (1 - R2c) + (1 - ICC)(1 - R2s) / m] / d^2;
+with 35 students per class, ICC = 0.20, R2c = R2s = 0.5 and d = 0.30 this gives 20 classes per arm. Both figures assume an
+outcome measured without error. In the simulation study, effects on the growth of one component were detected as follows:
+
+| Effect (logits per cycle) | About, in SD at the last cycle | 100 students | 200 students | 400 students |
+|---|---|---|---|---|
+| 0.10 | 0.27 | 23% | 39% | 70% |
+| 0.15 | 0.40 | 46% | 74% | 97% |
+| 0.20 | 0.53 | 67% | 95% | 99.9% |
+
+Plan for about 400 students unless effects of at least 0.15 logits per cycle are expected.
 
 ## 3. Participants and sample size
 

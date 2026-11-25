@@ -1,0 +1,58 @@
+{
+ "growth_power": {
+  "n100_effect0.10": 0.23,
+  "n100_effect0.15": 0.46375,
+  "n100_effect0.20": 0.670625,
+  "n200_effect0.10": 0.39,
+  "n200_effect0.15": 0.73875,
+  "n200_effect0.20": 0.946875,
+  "n400_effect0.10": 0.7025,
+  "n400_effect0.15": 0.9724999999999999,
+  "n400_effect0.20": 0.99875
+ },
+ "kappa_on_lower_bound": {
+  "count": 4,
+  "by_condition": {
+   "main_rho-8_n100": 2,
+   "main_rho-8_n200": 2
+  }
+ },
+ "kappa_on_upper_bound": 0,
+ "breakdown": {
+  "count": 11,
+  "with_100_students": 10,
+  "median_ess_range": [
+   11.850124581987597,
+   36.48905644177232
+  ],
+  "median_ess_elsewhere": 182.0840939605208,
+  "largest_change_in_a_proportion_points": 0.4898477157360359,
+  "largest_change_in_relative_bias_points": 0.5379849164779626
+ },
+ "lowest_subscore_ties": {
+  "main_rho1_n200": {
+   "kappa_true": 1.0,
+   "first_listed": 0.28995,
+   "random": 0.31341749999999996,
+   "students_with_a_tie": 0.21475000000000002
+  },
+  "main_rho0_n200": {
+   "kappa_true": 0.5,
+   "first_listed": 0.517775,
+   "random": 0.5456316666666666,
+   "students_with_a_tie": 0.2157
+  },
+  "main_rho-2_n200": {
+   "kappa_true": 0.25,
+   "first_listed": 0.575275,
+   "random": 0.5944816666666667,
+   "students_with_a_tie": 0.214625
+  },
+  "main_rho-8_n200": {
+   "kappa_true": 0.1,
+   "first_listed": 0.58305,
+   "random": 0.5975229166666667,
+   "students_with_a_tie": 0.21484999999999999
+  }
+ }
+}

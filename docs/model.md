@@ -39,8 +39,9 @@ Holistic rating of rater r:  Y_ir(t) = alpha + beta C_i(t) - lambda_r + e,  e ~ 
 2. **Growth parameters** per component by marginal maximum likelihood. The two-dimensional integral over (a, b) is taken on
    a rectangular grid sheared along the mean occasion and refined once to match posterior widths; the prior is normalised
    on the grid. Standard errors use the outer product of per-student scores.
-3. **Joint covariance** Sigma. Each student's rubric likelihood for a component is summarised by a Gaussian precision and
-   natural mean. A closed-form EM for this Gaussian approximation is run to convergence, and an importance-sampling EM then
+3. **Joint covariance** Sigma. The whole matrix is re-estimated at this stage; stage 2 supplies the means, the starting
+   values of the within-component blocks and the centre of the prior. Each student's rubric likelihood for a component is
+   summarised by a Gaussian precision and natural mean. A closed-form EM for this Gaussian approximation is run to convergence, and an importance-sampling EM then
    corrects for non-Gaussian likelihood shapes (at most 15 iterations on a fixed set of 300 proposals per student, so the
    correction is partial). Proposals are a defensive mixture of a multivariate t around the Gaussian posterior
    approximation and independent t blocks around the stage-2 posteriors. A weak inverse-Wishart prior worth two
@@ -51,6 +52,10 @@ Holistic rating of rater r:  Y_ir(t) = alpha + beta C_i(t) - lambda_r + e,  e ~ 
 4. **Aggregation parameters** (w, kappa, alpha, beta, lambda, sigma) by simulated maximum likelihood over 150 resampled draws
    per student, with analytic gradients and a Berndt-Hall-Hall-Hausman ascent (L-BFGS-B as fallback). Confidence intervals
    use the outer product of scores on the log-kappa scale; the profile likelihood is available through
-   `eagmodel.validate.profile_kappa`.
+   `eagmodel.validate.profile_kappa`. Kappa is restricted to the range 0.02 to 20; an estimate on the lower bound means
+   that the data cannot distinguish the structure from a fully conjunctive one.
 
-The sum-score hypothesis kappa = 1 is tested by a likelihood ratio (1 df) using the same draws for both models.
+The sum-score hypothesis kappa = 1 is tested by a likelihood ratio (1 df) using the same draws for both models. In the
+simulation study this test kept its 5% level, whereas the 95% confidence interval of kappa covered the true value in
+only 83.5% to 92% of cohorts at the two ends of the range (kappa = 0.1 and kappa = 1). Prefer the test to the interval
+when deciding about the sum score.
