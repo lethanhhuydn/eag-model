@@ -9,6 +9,10 @@ description = "Evidence-Aggregation-Growth (EAG) model of competence: simulate d
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
+authors = [
+    { name = "Huy Thanh Le" },
+    { name = "Cuong H. Nguyen-Dinh", email = "cuongndh@ufm.edu.vn" },
+]
 keywords = ["competence assessment", "STEM education", "item response theory", "CES aggregation", "simulation"]
 dependencies = ["numpy>=1.23", "scipy>=1.9", "pandas>=1.5", "matplotlib>=3.6"]
 

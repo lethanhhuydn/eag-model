@@ -5,7 +5,15 @@ version: 0.1.0
 date-released: 2026-11-25
 license: MIT
 authors:
-  - name: "The eag-model authors"
+  - family-names: "Le"
+    given-names: "Huy Thanh"
+    orcid: "https://orcid.org/0000-0003-3820-4546"
+    affiliation: "The University of Danang – University of Science and Education, Da Nang, Vietnam"
+  - family-names: "Nguyen-Dinh"
+    given-names: "Cuong H."
+    orcid: "https://orcid.org/0000-0001-6872-4644"
+    affiliation: "University of Finance – Marketing, Ho Chi Minh, Vietnam"
+    email: "cuongndh@ufm.edu.vn"
 repository-code: "https://github.com/lethanhhuydn/eag-model"
 keywords:
   - competence assessment
